@@ -15,7 +15,9 @@ export function PageHeader({ title, subtitle, actions }: PageHeaderProps) {
           <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
         ) : null}
       </div>
-      {actions ? <div className="flex flex-wrap gap-2">{actions}</div> : null}
+      {actions ? (
+        <div className="flex w-full flex-wrap gap-2 sm:w-auto">{actions}</div>
+      ) : null}
     </div>
   )
 }

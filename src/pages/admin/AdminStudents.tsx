@@ -26,30 +26,32 @@ export function AdminStudents() {
           <CardTitle className="text-lg">Student directory</CardTitle>
         </CardHeader>
         <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Student</TableHead>
-                <TableHead>Class</TableHead>
-                <TableHead>Guardian</TableHead>
-                <TableHead>Pickup</TableHead>
-                <TableHead>Notes</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {students.map((student) => (
-                <TableRow key={student.id}>
-                  <TableCell className="font-medium">{student.name}</TableCell>
-                  <TableCell>{student.className}</TableCell>
-                  <TableCell>{student.guardian}</TableCell>
-                  <TableCell>{student.pickup}</TableCell>
-                  <TableCell>
-                    <Badge variant="secondary">{student.notes}</Badge>
-                  </TableCell>
+          <div className="w-full overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Student</TableHead>
+                  <TableHead>Class</TableHead>
+                  <TableHead>Guardian</TableHead>
+                  <TableHead>Pickup</TableHead>
+                  <TableHead>Notes</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {students.map((student) => (
+                  <TableRow key={student.id}>
+                    <TableCell className="font-medium">{student.name}</TableCell>
+                    <TableCell>{student.className}</TableCell>
+                    <TableCell>{student.guardian}</TableCell>
+                    <TableCell>{student.pickup}</TableCell>
+                    <TableCell>
+                      <Badge variant="secondary">{student.notes}</Badge>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
         </CardContent>
       </Card>
     </div>

@@ -58,8 +58,8 @@ export function AppShell({ role, title, children }: AppShellProps) {
             </div>
             <p className="text-sm text-muted-foreground">{schoolInfo.location}</p>
           </div>
-          <div className="flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-2 rounded-full border-2 border-border/70 bg-white/80 p-1">
+          <div className="flex w-full flex-wrap items-center gap-3 sm:w-auto">
+            <div className="flex flex-1 items-center gap-2 rounded-full border-2 border-border/70 bg-white/80 p-1 sm:flex-none">
               {(Object.keys(roleRoutes) as Role[]).map((item) => (
                 <NavLink
                   key={item}
@@ -77,7 +77,7 @@ export function AppShell({ role, title, children }: AppShellProps) {
                 </NavLink>
               ))}
             </div>
-            <Button variant="outline" className="bg-white/90">
+            <Button variant="outline" className="w-full bg-white/90 sm:w-auto">
               Contact support
             </Button>
           </div>

@@ -26,46 +26,48 @@ export function TeacherAttendance() {
           <CardTitle className="text-lg">Sunflower class</CardTitle>
         </CardHeader>
         <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Student</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Quick actions</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {attendance.map((record) => (
-                <TableRow key={record.name}>
-                  <TableCell className="font-medium">{record.name}</TableCell>
-                  <TableCell>
-                    <Badge
-                      variant={
-                        record.status === 'Absent'
-                          ? 'destructive'
-                          : record.status === 'Late'
-                            ? 'outline'
-                            : 'secondary'
-                      }
-                    >
-                      {record.status}
-                    </Badge>
-                  </TableCell>
-                  <TableCell className="space-x-2">
-                    <Button size="sm" variant="outline">
-                      Present
-                    </Button>
-                    <Button size="sm" variant="outline">
-                      Late
-                    </Button>
-                    <Button size="sm" variant="outline">
-                      Absent
-                    </Button>
-                  </TableCell>
+          <div className="w-full overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Student</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead>Quick actions</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {attendance.map((record) => (
+                  <TableRow key={record.name}>
+                    <TableCell className="font-medium">{record.name}</TableCell>
+                    <TableCell>
+                      <Badge
+                        variant={
+                          record.status === 'Absent'
+                            ? 'destructive'
+                            : record.status === 'Late'
+                              ? 'outline'
+                              : 'secondary'
+                        }
+                      >
+                        {record.status}
+                      </Badge>
+                    </TableCell>
+                    <TableCell className="flex flex-wrap gap-2">
+                      <Button size="sm" variant="outline">
+                        Present
+                      </Button>
+                      <Button size="sm" variant="outline">
+                        Late
+                      </Button>
+                      <Button size="sm" variant="outline">
+                        Absent
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
         </CardContent>
       </Card>
     </div>

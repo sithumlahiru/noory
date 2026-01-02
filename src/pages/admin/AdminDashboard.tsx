@@ -44,42 +44,46 @@ export function AdminDashboard() {
       </div>
 
       <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
-        <Card className="soft-panel">
-          <CardHeader>
-            <CardTitle className="text-lg">Class assignments</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Class</TableHead>
-                  <TableHead>Teacher</TableHead>
-                  <TableHead>Students</TableHead>
-                  <TableHead>Status</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {classes.map((item) => (
-                  <TableRow key={item.id}>
-                    <TableCell className="font-medium">{item.name}</TableCell>
-                    <TableCell>{item.teacher}</TableCell>
-                    <TableCell>{item.students}</TableCell>
-                    <TableCell>
-                      <Badge
-                        variant={
-                          item.status === 'Needs cover' ? 'destructive' : 'secondary'
-                        }
-                      >
-                        {item.status}
-                      </Badge>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-            <Button variant="outline" className="mt-4">
-              Assign teachers
-            </Button>
+          <Card className="soft-panel">
+            <CardHeader>
+              <CardTitle className="text-lg">Class assignments</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="w-full overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Class</TableHead>
+                      <TableHead>Teacher</TableHead>
+                      <TableHead>Students</TableHead>
+                      <TableHead>Status</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {classes.map((item) => (
+                      <TableRow key={item.id}>
+                        <TableCell className="font-medium">{item.name}</TableCell>
+                        <TableCell>{item.teacher}</TableCell>
+                        <TableCell>{item.students}</TableCell>
+                        <TableCell>
+                          <Badge
+                            variant={
+                              item.status === 'Needs cover'
+                                ? 'destructive'
+                                : 'secondary'
+                            }
+                          >
+                            {item.status}
+                          </Badge>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+              <Button variant="outline" className="mt-4">
+                Assign teachers
+              </Button>
           </CardContent>
         </Card>
 

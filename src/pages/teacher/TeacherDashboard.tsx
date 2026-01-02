@@ -23,10 +23,11 @@ export function TeacherDashboard() {
 
       <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
         <Card className="soft-panel">
-          <CardHeader>
-            <CardTitle className="text-lg">Attendance</CardTitle>
-          </CardHeader>
-          <CardContent>
+        <CardHeader>
+          <CardTitle className="text-lg">Attendance</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="w-full overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
@@ -57,8 +58,9 @@ export function TeacherDashboard() {
                 ))}
               </TableBody>
             </Table>
-          </CardContent>
-        </Card>
+          </div>
+        </CardContent>
+      </Card>
 
         <Card className="soft-panel">
           <CardHeader>

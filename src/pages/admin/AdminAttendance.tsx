@@ -26,36 +26,38 @@ export function AdminAttendance() {
           <CardTitle className="text-lg">Today</CardTitle>
         </CardHeader>
         <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Student</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Check-in</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {attendance.map((record) => (
-                <TableRow key={record.name}>
-                  <TableCell className="font-medium">{record.name}</TableCell>
-                  <TableCell>
-                    <Badge
-                      variant={
-                        record.status === 'Absent'
-                          ? 'destructive'
-                          : record.status === 'Late'
-                            ? 'outline'
-                            : 'secondary'
-                      }
-                    >
-                      {record.status}
-                    </Badge>
-                  </TableCell>
-                  <TableCell>{record.checkIn}</TableCell>
+          <div className="w-full overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Student</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead>Check-in</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {attendance.map((record) => (
+                  <TableRow key={record.name}>
+                    <TableCell className="font-medium">{record.name}</TableCell>
+                    <TableCell>
+                      <Badge
+                        variant={
+                          record.status === 'Absent'
+                            ? 'destructive'
+                            : record.status === 'Late'
+                              ? 'outline'
+                              : 'secondary'
+                        }
+                      >
+                        {record.status}
+                      </Badge>
+                    </TableCell>
+                    <TableCell>{record.checkIn}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
         </CardContent>
       </Card>
     </div>
