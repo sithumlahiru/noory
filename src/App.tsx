@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { AppShell } from '@/components/app/AppShell'
 import { LandingPage } from '@/pages/LandingPage'
@@ -18,7 +19,15 @@ import { ParentAnnouncements } from '@/pages/parent/ParentAnnouncements'
 import { ParentFees } from '@/pages/parent/ParentFees'
 import type { Role } from '@/data/mock'
 
-function RoleLayout({ role, title, children }: { role: Role; title: string; children: JSX.Element }) {
+function RoleLayout({
+  role,
+  title,
+  children,
+}: {
+  role: Role
+  title: string
+  children: ReactNode
+}) {
   return (
     <AppShell role={role} title={title}>
       {children}
